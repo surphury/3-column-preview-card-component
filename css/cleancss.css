@@ -1,0 +1,108 @@
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --bright-gray: hsl(0, 0%, 95%);
+    --lexend-deca: "Lexend Deca";
+    --big-shoulders: "Big Shoulders Display";
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 15px;
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--bright-gray);
+    font-family: var(--lexend-deca), sans-serif;
+    padding: 7em 0;
+    background-color: var(--bright-gray);
+}
+
+.article {
+    margin: auto;
+    border-radius: 0.5em;
+    overflow: hidden;
+}
+.card__title {
+    font-family: var(--big-shoulders), sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.card:first-of-type::before{
+    content: url(../images/icon-sedans.svg);
+
+}
+.card:nth-of-type(2)::before{
+    content: url(../images/icon-suvs.svg);
+    
+}
+.card:nth-of-type(3)::before{
+    content: url(../images/icon-luxury.svg);
+}
+
+.card {
+    height: 470px;
+    max-width: 328px;
+    padding: 3em;
+    display: grid;
+    box-sizing: border-box;
+}
+
+.card:first-of-type{
+    background-color: var(--bright-orange);
+}
+
+.card:nth-of-type(2){
+    background-color: var(--dark-cyan);
+}
+
+.card:nth-of-type(3){
+    background-color: var(--very-dark-cyan);
+}
+
+.card__paragraph {
+    color: var(--transparent-white);
+    line-height: 200%;
+}
+
+.card__button {
+    padding: 1em 2em;
+    place-self: baseline;
+    font-family: inherit;
+    border-radius: 1.5em;
+    border-color: transparent;
+    cursor: pointer
+}
+
+.card__button--first {
+    color: var(--bright-orange);
+}
+
+.card__button--second {
+    color: var(--dark-cyan);
+}
+
+.card__button--third {
+    color: var(--very-dark-cyan);
+}
+
+@media only screen and (min-width:990px) {
+    .card__button:hover {
+        border: 2px solid;
+        color: var(--very-light-gray);
+        background-color: transparent;
+        transition: background-color .3s;
+    }
+    .article {
+        display: flex;
+    }
+}
