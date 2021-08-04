@@ -1,0 +1,119 @@
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    --bright-gray: hsl(0, 0%, 95%);
+    --lexend-deca: "Lexend Deca";
+    --big-shoulders: "Big Shoulders Display";
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    display: -ms-grid;
+    display: grid;
+    min-height: 100vh;
+    padding: 7em 0;
+    margin: 0;
+    font-family: var(--lexend-deca), sans-serif;
+    color: var(--bright-gray);
+    background-color: var(--bright-gray);
+}
+
+.article {
+    overflow: hidden;
+    margin: auto;
+    border-radius: 0.5em;
+}
+
+.card__title {
+    font-size: 2.5rem;
+    font-family: var(--big-shoulders), sans-serif;
+    text-transform: uppercase;
+}
+
+.card:first-of-type::before {
+    content: url(../images/icon-sedans.svg);
+}
+
+.card:nth-of-type(2)::before {
+    content: url(../images/icon-suvs.svg);
+}
+
+.card:nth-of-type(3)::before {
+    content: url(../images/icon-luxury.svg);
+}
+
+.card {
+    display: -ms-grid;
+    display: grid;
+    padding: 3em;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 328px;
+    height: 470px;
+}
+
+.card:first-of-type {
+    background-color: var(--bright-orange);
+}
+
+.card:nth-of-type(2) {
+    background-color: var(--dark-cyan);
+}
+
+.card:nth-of-type(3) {
+    background-color: var(--very-dark-cyan);
+}
+
+.card__paragraph {
+    line-height: 200%;
+    color: var(--transparent-white);
+}
+
+.card__button {
+    -ms-grid-row-align: baseline;
+    -ms-grid-column-align: baseline;
+    place-self: baseline;
+    padding: 1em 2em;
+    border-color: transparent;
+    font-family: inherit;
+    border-radius: 1.5em;
+    cursor: pointer
+}
+
+.card__button--first {
+    color: var(--bright-orange);
+}
+
+.card__button--second {
+    color: var(--dark-cyan);
+}
+
+.card__button--third {
+    color: var(--very-dark-cyan);
+}
+
+@media only screen and (min-width:990px) {
+    .card__button:hover {
+        border: 2px solid;
+        color: var(--very-light-gray);
+        background-color: transparent;
+        -webkit-transition: background-color .3s;
+        -o-transition: background-color .3s;
+        transition: background-color .3s;
+    }
+    .article {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
